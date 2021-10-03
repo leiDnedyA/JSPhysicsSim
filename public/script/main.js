@@ -1,5 +1,7 @@
 const gameCanvas = document.querySelector("#gameCanvas");
 
+importConfigJSON('/config/config.json');
+
 const tickSpeed = 20;
 
 const renderer = new Renderer(gameCanvas);
@@ -13,5 +15,6 @@ engine.setGame(game);
 charController.setEngine(engine)
 
 engine.start();
+game.start();
 
 game.addGameObject(sampleObj);
