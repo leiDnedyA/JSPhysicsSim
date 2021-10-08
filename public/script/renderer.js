@@ -11,13 +11,31 @@ class Renderer {
 			this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
 			for(let i in gameObjects){
-				this.drawObject(gameObjects[i])
+				if(gameObjects[i] instanceof TextEntity){
+					this.drawText(gameObjects[i])
+				}else{
+					this.drawObject(gameObjects[i])
+				}
+				
 			}
 		}
 
 		this.drawObject = (obj)=>{
 			this.ctx.fillStyle = obj.color;
 			this.ctx.fillRect(obj.position.x * unitSize, obj.position.y * unitSize, obj.size.x * unitSize, obj.size.y * unitSize);
+		}
+
+		this.drawText = (obj)=>{
+			this.ctx.font = `${obj.fontSize}px serif`;
+			this.ctx.fillStyle = obj.color;
+			if(obj.centered){
+				let measureText = this.ctx.measureText(obj.text);
+				let centerPos = new Vector2((this.canvas.width - measureText.width) / 2, (this.canvas.height - obj.fontSize) / 2)
+				this.ctx.fillText(obj.text, centerPos.x, centerPos.y)
+			}else{
+
+				this.ctx.fillText(obj.text, obj.position.x * unitSize, obj.position.y * unitSize)
+			}
 		}
 
 		this.autoScale = ()=>{

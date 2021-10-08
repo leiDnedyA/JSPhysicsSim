@@ -3,11 +3,6 @@ const gameCanvas = document.querySelector("#gameCanvas");
 const tickSpeed = 20;
 importConfigJSON('/config/config.json');
 
-const tickSpeed = 30;
-importConfigJSON('/config/config.json');
-
-const tickSpeed = 30;
-
 const renderer = new Renderer(gameCanvas);
 const game = new Game();
 const physicsEngine = new PhysicsEngine(1);

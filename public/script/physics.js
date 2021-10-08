@@ -58,7 +58,7 @@ class PhysicsEngine {
 						}
 					}
 
-					console.log(currObj.acceleration)
+					// console.log(currObj.acceleration)
 
 					// if(Math.abs(currObj.velocity.x) < currObj.speed){
 						
