@@ -26,6 +26,8 @@ class Engine {
 
 			this.physicsEngine.update(this.getDeltaTime());
 
+			this.game.update()
+
 			for(let i in this.updateFunctions){
 				this.updateFunctions[i]();
 			}

@@ -1,7 +1,8 @@
 
 class Game {
-	constructor(){
+	constructor(player){
 		this.gameObjects = {}
+		this.player = player;
 
 		this.level;
 
@@ -11,6 +12,15 @@ class Game {
 
 		this.start = ()=>{
 			this.setLevel(new TitleScreen());
+			this.level.setPlayer(this.player);
+		}
+
+		this.update = ()=>{
+			for(let i in this.gameObjects){
+				if(this.gameObjects[i].hasOwnProperty('update')){
+					this.gameObjects[i].update();
+				}
+			}
 		}
 
 		this.setLevel = (level)=>{

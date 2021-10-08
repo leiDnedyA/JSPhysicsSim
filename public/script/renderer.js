@@ -6,6 +6,8 @@ class Renderer {
 		this.canvas = canvas;
 		this.ctx = this.canvas.getContext('2d');
 
+		this.ctx.globalAlpha = .3;
+
 		this.draw = (gameObjects)=>{
 			this.ctx.fillStyle = "black";
 			this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
@@ -26,7 +28,7 @@ class Renderer {
 		}
 
 		this.drawText = (obj)=>{
-			this.ctx.font = `${obj.fontSize}px serif`;
+			this.ctx.font = `${obj.fontSize}px ${obj.fontFace}`;
 			this.ctx.fillStyle = obj.color;
 			if(obj.centered){
 				let measureText = this.ctx.measureText(obj.text);
