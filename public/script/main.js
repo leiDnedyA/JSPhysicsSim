@@ -1,12 +1,12 @@
 const gameCanvas = document.querySelector("#gameCanvas");
 
-<<<<<<< Updated upstream
 const tickSpeed = 20;
-=======
 importConfigJSON('/config/config.json');
 
 const tickSpeed = 30;
->>>>>>> Stashed changes
+importConfigJSON('/config/config.json');
+
+const tickSpeed = 30;
 
 const renderer = new Renderer(gameCanvas);
 const game = new Game();
@@ -22,5 +22,6 @@ physicsEngine.setGame(game);
 charController.setEngine(engine)
 
 engine.start();
+game.start();
 
 game.addGameObject(sampleObj);

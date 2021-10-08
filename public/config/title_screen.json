@@ -1,0 +1,13 @@
+{
+	"title": "TÍTULO",
+	"buttons": {
+		"start": {
+			"text": "START",
+			"subtext": "empezar"
+		},
+		"settings": {
+			"text": "SETTINGS",
+			"subtext": "configuración"
+		}
+	}
+}
