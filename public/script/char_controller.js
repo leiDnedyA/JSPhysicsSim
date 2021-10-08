@@ -23,26 +23,26 @@ class CharControllerLocal {
 
 		this.updateFunc = ()=>{
 
-			let v = new Vector2(0, 0);
+			let m = new Vector2(0, 0);
 			if(this.keysDown['W']){
-				v.y -= 1;
+				m.y -= 1;
 			}
 			if(this.keysDown['S']){
-				v.y += 1;
+				m.y += 1;
 			}
 			if(this.keysDown['A']){
-				v.x -= 1;
+				m.x -= 1;
 			}
 			if(this.keysDown['D']){
-				v.x += 1;
+				m.x += 1;
 			}
 
-			this.velocity = v;
+			this.player.move = m;
 
 			// console.log(this.player.position)
 
-			this.player.position.x += this.velocity.x * this.playerSpeed * this.engine.getDeltaTime();
-			this.player.position.y += this.velocity.y * this.playerSpeed *this.engine.getDeltaTime();
+			// this.player.position.x += this.velocity.x * this.playerSpeed * this.engine.getDeltaTime();
+			// this.player.position.y += this.velocity.y * this.playerSpeed *this.engine.getDeltaTime();
 		}
 
 		this.keyEvent = (e, value)=>{
