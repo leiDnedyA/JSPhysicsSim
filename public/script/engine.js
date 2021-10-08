@@ -5,7 +5,8 @@ class Engine {
 		this.tickSpeed = tickSpeed;
 
 		this.renderer; //set with method this.setRenderer()
-		this.game; //set with method this.setGame();
+		this.game; //set with method this.setGame()
+		this.physicsEngine; //set with method this.setPhysicsEngine()
 
 		this.updateFunctions = [];
 
@@ -22,6 +23,8 @@ class Engine {
 			this.tick(); // keeps time
 
 			this.renderer.draw(this.game.gameObjects);
+
+			this.physicsEngine.update(this.getDeltaTime());
 
 			for(let i in this.updateFunctions){
 				this.updateFunctions[i]();
@@ -46,6 +49,10 @@ class Engine {
 			this.game = game;
 		}
 
+
+		this.setPhysicsEngine = (physicsEngine) =>{
+			this.physicsEngine = physicsEngine;
+		}
 
 		this.getDeltaTime = ()=>{
 			return this.deltaTime;
