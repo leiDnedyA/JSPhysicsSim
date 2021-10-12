@@ -2,7 +2,7 @@ const gameCanvas = document.querySelector("#gameCanvas");
 
 
 const tickSpeed = 60;
-importConfigJSON('/config/config.json');
+importConfigJSON('./config/config.json');
 
 const renderer = new Renderer(gameCanvas);
 const sampleObj = new PhysicsEntity("player", new Vector2(2, 2)); //player
