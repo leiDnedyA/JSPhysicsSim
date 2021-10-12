@@ -25,12 +25,15 @@ engine.setPhysicsEngine(physicsEngine);
 physicsEngine.setGame(game);
 charController.setEngine(engine);
 
-engine.start();
+engine.start(()=>{
+	let toast = new bootstrap.Toast(document.querySelector('#tutorialToast'))
+	toast.show()
+});
 game.start();
 entitySelector.start();
 
 game.addGameObject(sampleObj); //init player
-sampleObj.color = "#6666ff";
+sampleObj.color = "#6666ff"; //accent color
 // sampleObj.setSelected(true);
 
 for(let i = 0; i < 10; i++){

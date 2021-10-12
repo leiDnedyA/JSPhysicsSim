@@ -14,9 +14,13 @@ class Engine {
 		this.lastUpdate = Date.now();
 		this.deltaTime = -1;
 
-		this.start = ()=>{
+		this.start = (startFunc)=>{
 			setInterval(this.update,  1000/this.tickSpeed)
-			alert("Controls: W = up, A = left, S = down, D = right")
+			if(startFunc){
+				startFunc();
+			}
+
+
 		}
 
 		this.update = ()=>{

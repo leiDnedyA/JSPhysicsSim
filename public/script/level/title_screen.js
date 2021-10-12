@@ -4,8 +4,8 @@ class TitleScreen extends Level{
 		super("Title Screen");
 
 		this.entities = {
-			title: new TextEntity(new Vector2(3, 12), "Ayden's Test Thing", 100, "#333344"),
-			playerPos: new TextEntity(new Vector2(1, 1), "(0, 0)", 15, "#6666ff")
+			title: new TextEntity(new Vector2(3, 12), "Ayden's Test Thing", 100, "#333344"), //primary color
+			playerPos: new TextEntity(new Vector2(1, 1), "(0, 0)", 15, "#6666ff") //accent color
 		}
 		this.entities.title.centered = true;
 
