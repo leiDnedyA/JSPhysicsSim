@@ -3,6 +3,7 @@ class Game {
 	constructor(player){
 		this.gameObjects = {}
 		this.player = player;
+		this.entitySelector; //set with setEntitySelector()
 
 		this.level;
 
@@ -21,6 +22,10 @@ class Game {
 					this.gameObjects[i].update();
 				}
 			}
+
+			if(this.entitySelector){
+				this.entitySelector.update();
+			}
 		}
 
 		this.setLevel = (level)=>{
@@ -28,6 +33,15 @@ class Game {
 			for(let i in level.entities){
 				this.addGameObject(level.entities[i]);
 			}
+		}
+
+		this.setPlayer = (newPlayer)=>{
+			this.player = newPlayer;
+			this.level.setPlayer(this.player);
+		}
+
+		this.setEntitySelector = (entitySelector)=>{
+			this.entitySelector = entitySelector;
 		}
 	}
 }

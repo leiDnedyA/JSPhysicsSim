@@ -5,6 +5,16 @@ class Entity {
 		this.position = position;
 		this.size = size;
 		this.color = "white";
+		this.selected = false;
+		this.showPos = false;
+
+		this.setSelected = (b)=>{
+			this.selected = b;
+		}
+
+		this.setShowPos = (b)=>{
+			this.showPos = b;
+		}
 	}
 }
 

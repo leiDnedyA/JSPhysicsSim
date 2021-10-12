@@ -1,9 +1,4 @@
-const bounds = {
-      x: [0, window.innerWidth],
-      y: [0, window.innerHeight]
-      }
 
-      
 class TitleScreen extends Level{
 	constructor(){
 		super("Title Screen");

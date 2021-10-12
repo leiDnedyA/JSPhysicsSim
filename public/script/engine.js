@@ -16,6 +16,7 @@ class Engine {
 
 		this.start = ()=>{
 			setInterval(this.update,  1000/this.tickSpeed)
+			alert("Controls: W = up, A = left, S = down, D = right")
 		}
 
 		this.update = ()=>{
