@@ -4,6 +4,8 @@ class Game {
 		this.gameObjects = {}
 		this.player = player;
 		this.entitySelector; //set with setEntitySelector()
+		this.charController; //set with setCharController()
+		this.selectedEntity; //set by entity selector
 
 		this.level;
 
@@ -35,9 +37,23 @@ class Game {
 			}
 		}
 
+		this.setCharController = (charController)=>{
+			this.charController = charController;
+		}
+
 		this.setPlayer = (newPlayer)=>{
+			
+			this.player.color = "#222333";
+			
 			this.player = newPlayer;
+
+			this.player.color = "#6666ff";
+
 			this.level.setPlayer(this.player);
+
+			if(this.charController){
+				this.charController.setPlayer(this.player)
+			}
 		}
 
 		this.setEntitySelector = (entitySelector)=>{

@@ -53,6 +53,10 @@ class CharControllerLocal {
 			}
 		}
 
+		this.setPlayer = (newPlayer)=>{
+			this.player = newPlayer;
+		}
+
 		window.addEventListener('keydown', (e)=>{this.keyEvent(e, true)});
 		window.addEventListener('keyup', (e)=>{this.keyEvent(e, false)});
 	}

@@ -4,7 +4,7 @@ class Entity {
 		this.name = name;
 		this.position = position;
 		this.size = size;
-		this.color = "white";
+		this.color = "#222333";
 		this.selected = false;
 		this.showPos = false;
 
