@@ -76,8 +76,12 @@ for(let i = 0; i < 10; i++){
 	// game.addGameObject(new PhysicsEntity(`dummy ${i}`, new Vector2(10+i*2, 10+i*2)))
 }
 
-game.addGameObject(dummyObj); //init dummy
+// game.addGameObject(dummyObj); //init dummy
 // game.addGameObject(staticObj); //init dummy
+
+for(let i = 0; i < 8; i++){
+	game.addGameObject(new PhysicsEntity(`dummy ${i}`, new Vector2(Math.random() * (gameCanvas.width / unitSize), Math.random() * (gameCanvas.height / unitSize)), Math.random() * 1 + .5))
+}
 
 const getClickWorldPos = (e, canvas)=>{
 	let target = this.canvas;

@@ -43,10 +43,12 @@ class Game {
 
 		this.setPlayer = (newPlayer)=>{
 			
+			//setting old player back to regular entity
 			this.player.color = "#222333";
-			
-			this.player = newPlayer;
+			this.player.move = new Vector2(0, 0);
 
+			//setting up new player
+			this.player = newPlayer;
 			this.player.color = "#6666ff";
 
 			this.level.setPlayer(this.player);
